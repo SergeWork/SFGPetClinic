@@ -4,7 +4,7 @@
 
 	<groupId>guru.springframework</groupId>
 	<artifactId>sfg-pet-clinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.4</version>
     <modules>
         <module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
@@ -28,9 +28,10 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://github.com/SergeWork/SFGPetClinic.git</connection>
-		<developerConnection>scm:git:https://github.com/SergeWork/SFGPetClinic.git</developerConnection>
-	  	<tag>sfg-pet-clinic-0.0.2</tag>
+		<developerConnection>scm:git:git@github.com/SergeWork/SFGPetClinic.git</developerConnection>
+		<connection>scm:git:git@github.com/SergeWork/SFGPetClinic.git</connection>
+		<url>scm:git:git@github.com/SergeWork/SFGPetClinic.git</url>
+		<tag>sfg-pet-clinic-0.0.4</tag>
   	</scm>
 
 	<build>
@@ -44,6 +45,11 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
 					<goals>install</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+						<checkModificationExclude>**</checkModificationExclude>
+					</checkModificationExcludes>
 				</configuration>
 			</plugin>
 		</plugins>
