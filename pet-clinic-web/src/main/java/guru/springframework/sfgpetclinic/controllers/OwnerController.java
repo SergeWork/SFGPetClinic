@@ -13,6 +13,7 @@ import java.util.Set;
 public class OwnerController {
 
 	public static final String INDEX_OWNERS = "owners/index";
+	public static final String NOT_IMPLEMENTED = "notimplemented";
 
 	private final OwnerService ownerService;
 
@@ -25,5 +26,10 @@ public class OwnerController {
 		Set<Owner> owners = ownerService.findAll();
 		model.addAttribute("owners", owners);
 		return INDEX_OWNERS;
+	}
+
+	@RequestMapping("/find")
+	public String findOwners() {
+		return NOT_IMPLEMENTED;
 	}
 }
