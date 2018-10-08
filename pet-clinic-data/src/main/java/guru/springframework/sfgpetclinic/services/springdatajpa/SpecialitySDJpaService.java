@@ -38,11 +38,6 @@ public class SpecialitySDJpaService implements SpecialityService {
 	}
 
 	@Override
-	public Speciality findByLastName(String lastName) {
-		return specialityRepository.findByLastName(lastName);
-	}
-
-	@Override
 	public void delete(Speciality Speciality) {
 		specialityRepository.delete(Speciality);
 	}

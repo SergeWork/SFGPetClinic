@@ -37,11 +37,6 @@ public class PetTypeSDJpaService implements PetTypeService {
 	}
 
 	@Override
-	public PetType findByLastName(String lastName) {
-		return petTypeRepository.findByLastName(lastName);
-	}
-
-	@Override
 	public void delete(PetType PetType) {
 		petTypeRepository.delete(PetType);
 	}

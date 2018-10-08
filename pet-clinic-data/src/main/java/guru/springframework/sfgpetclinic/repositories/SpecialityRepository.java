@@ -5,5 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface SpecialityRepository extends CrudRepository<Speciality, Long> {
 
-	Speciality findByLastName(String lastName);
 }

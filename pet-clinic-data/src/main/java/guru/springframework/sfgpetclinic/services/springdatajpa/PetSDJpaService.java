@@ -38,11 +38,6 @@ public class PetSDJpaService implements PetService {
 	}
 
 	@Override
-	public Pet findByLastName(String lastName) {
-		return petRepository.findByLastName(lastName);
-	}
-
-	@Override
 	public void delete(Pet Pet) {
 		petRepository.delete(Pet);
 	}
