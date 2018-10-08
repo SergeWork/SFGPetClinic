@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.services.map;
 
 import guru.springframework.sfgpetclinic.model.PetType;
+import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +33,10 @@ public class PetTypeMapService extends AbstractMapService<PetType, Long> impleme
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public PetType findByLastName(String lastName) {
+		return null;
 	}
 }
