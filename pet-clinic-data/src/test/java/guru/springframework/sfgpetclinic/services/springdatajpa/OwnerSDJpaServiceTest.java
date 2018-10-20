@@ -7,11 +7,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.exceptions.base.MockitoException;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class OwnerSDJpaServiceTest {
@@ -20,37 +21,27 @@ public class OwnerSDJpaServiceTest {
     OwnerRepository ownerRepository;
 
     @InjectMocks
-    OwnerSDJpaService ownerSDJpaService;
+    OwnerSDJpaService service;
 
-    // No need because of @InjectMocks
-    /*@Before
+    Owner returnedOwner;
+
+    @Before
     public void setUp() throws Exception {
-        ownerSDJpaService = new OwnerSDJpaService(ownerRepository);
-    }*/
+        // No need because of @InjectMocks
+        service = new OwnerSDJpaService(ownerRepository);
 
-    @Test
-    public void findAll() throws Exception {
-    }
-
-    @Test
-    public void findById() throws Exception {
-    }
-
-    @Test
-    public void save() throws Exception {
+        returnedOwner = new Owner();
+        returnedOwner.setId(1L);
+        returnedOwner.setLastName("Smith");
     }
 
     @Test
     public void findByLastName() throws Exception {
-        Owner owner = ownerSDJpaService.findByLastName("Smith");
-    }
+        when(service.findByLastName((any()))).thenReturn(returnedOwner);
 
-    @Test
-    public void delete() throws Exception {
-    }
+        Owner owner = service.findByLastName("Smith");
 
-    @Test
-    public void deleteById() throws Exception {
+        assertEquals(owner, returnedOwner);
     }
 
 }
